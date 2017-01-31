@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Unit;
+use App\Position;
 
 class HomeController extends Controller
 {
@@ -23,13 +25,13 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
      public function getViewModel() {
-         $users = User::All();
-         $users_list = array('' =>'');
-         foreach ($users as $item) {
-             $users_list[$item->id]=$item->name;
+         $units = Unit::All();
+         $units_list = array('' =>'');
+         foreach ($units as $item) {
+             $units_list[$item->id]=$item->name;
          }
          return [
-             'users_list' => $users_list
+             'units_list' => $units_list
          ];
      }
     public function index()
