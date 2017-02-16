@@ -18,4 +18,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::resource('goy', 'HomeController@index');
+Route::get('get_position/{id}', array('as'=>'get_position', 'uses'=>'HomeController@getPosition'));

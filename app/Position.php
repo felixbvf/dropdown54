@@ -14,9 +14,14 @@ class Position extends Model
 	];
     protected $guarded = ['id'];
 
-    
+
     public function position()
     {
     	return $this->belongsTo('App\Position');
+    }
+
+    public function scopePositionidIs($query, $id)
+    {
+        return $query->where('unit_id', $id);
     }
 }

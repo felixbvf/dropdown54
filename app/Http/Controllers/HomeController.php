@@ -38,4 +38,13 @@ class HomeController extends Controller
     {
         return view('home', self::getViewModel());
     }
+
+    public function getPosition(Request $request, $id)
+    {
+        if($request->ajax())
+        {
+            $positions = Position::PositionidIs($id)->get();
+            return response()->json($positions);
+        }
+    }
 }
