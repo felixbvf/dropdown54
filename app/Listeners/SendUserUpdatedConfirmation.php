@@ -26,6 +26,6 @@ class SendUserUpdatedConfirmation
      */
     public function handle(UserUpdated $event)
     {
-        dd('Registrando Usuario', $event->user);
+        dd('Registrando Usuario', $event->user->toArray());
     }
 }
