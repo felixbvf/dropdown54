@@ -39,3 +39,7 @@ Route::get('courses', function() use ($courses) {
 
     dd($courses->toArray(), $premium->toArray(),$free->toArray());
 });
+
+Route::get('images', function () {
+    return view('images');
+});
