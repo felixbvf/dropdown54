@@ -3,8 +3,12 @@
 
 El producto **{{ $product->name }}** fue actualizado!
 
-@component('mail::button', ['url' => 'products/'.$product->name])
+@component('mail::button', ['url' => url('products/'.$product->id)])
 Ver producto
+@endcomponent
+
+@component('mail::panel')
+    Información del producto
 @endcomponent
 
 Thanks,<br>
